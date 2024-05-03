@@ -1,0 +1,18 @@
+from ._anvil_designer import BubbleSortTemplate
+from anvil import *
+import anvil.server
+
+
+class BubbleSort(BubbleSortTemplate):
+  def __init__(self, **properties):
+    # Set Form properties and Data Bindings.
+    self.init_components(**properties)
+
+    # Any code you write here will run before the form opens.
+
+  def ThucHien_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    numbers = self.tb_nsonguyen.text
+    self.tb_tangdan.text = ','.join(map(str, anvil.server.call('sort_numbers', numbers)))
+    self.tb_giamdan.text = ','.join(map(str, anvil.server.call('sort_numbers_des', numbers)))
+
