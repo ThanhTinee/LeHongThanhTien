@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+void inBoiSoCuaBay() 
+{
+    int so;
+    printf("số nguyên có 2 chữ số và là bội của 7: ");
+    for (so = 10; so < 100; so++) 
+    {
+        if (so % 7 == 0) 
+        {
+            printf("\n%d; ", so);
+        }
+    }
+}
+
+int main() 
+{
+    inBoiSoCuaBay();
+    return 0;
+}
